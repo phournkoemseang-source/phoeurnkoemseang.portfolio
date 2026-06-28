@@ -18,6 +18,7 @@ import {
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
+import { TeamDisplay } from "@/components/TeamDisplay";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
@@ -124,6 +125,7 @@ export default async function Project({
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
+      <TeamDisplay team={post.metadata.team} />
       <Column fillWidth gap="40" horizontal="center" marginTop="40">
         <Line maxWidth="40" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">

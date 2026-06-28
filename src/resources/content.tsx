@@ -1,57 +1,54 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Line, Row, Text, Button } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-  locale: "en", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
+  firstName: "Koemseang",
+  lastName: "Pho eurn",
+  name: "PHOEURN Koemseang",
+  role: "Web Developer & IT Student",
+  avatar: "/images/me.jpg",
+  email: "phournkoemseang@gmail.com",
+  location: "Asia/Phnom_Penh",
+  languages: ["Khmer", "English"],
+  locale: "en",
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My newsletter about web development and technology</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/phournkoemseang-source",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/phoeurn-koemseang",
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "X",
+    icon: "x",
+    link: "https://x.com/phournkoemseang",
     essential: true,
   },
   {
     name: "Email",
     icon: "email",
-    link: `mailto:${person.email}`,
+    link: "mailto:phournkoemseang@gmail.com",
     essential: true,
+  },
+  {
+    name: "Telegram",
+    icon: "telegram",
+    link: "https://t.me/Ph_koemseang",
+    essential: false,
   },
 ];
 
@@ -59,26 +56,28 @@ const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: "PHOEURN Koemseang - Web Developer Portfolio | PNC Cambodia",
+  description: `Portfolio website of ${person.name}, ${person.role} at Passerelles Numeriques Cambodia`,
+  headline: (
+    <>
+      Aspiring Full-Stack Web Developer
+    </>
+  ),
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          IT Student at Passerelles Numériques Cambodia
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "#about",
   },
   subline: (
     <>
-      I'm {person.firstName}, a {person.role.toLowerCase()} at{" "}
-      <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+      Building clean, responsive, and user-friendly web applications with modern technologies.<br />
+      A passionate Web Developer & IT Student crafting modern, user-centric digital experiences from Cambodia.
     </>
   ),
 };
@@ -87,7 +86,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from Cambodia`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -96,60 +95,93 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "About Me",
     description: (
       <>
-        {person.firstName} is a {person.location.split("/")[1]?.replace("_", " ")}-based {person.role.toLowerCase()} with a passion for transforming complex challenges
-        into simple, elegant design solutions. Their work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am PHOEURN Koemseang, a passionate Web Developer and IT student at Passerelles Numériques Cambodia (PNC).
+        I chose web development because it allows me to combine creativity with technical problem-solving,
+        building applications that make a real impact. My training at PNC has equipped me with strong
+        foundations in front-end and back-end technologies, and I am committed to becoming a skilled
+        full-stack developer. I enjoy collaborating on team projects, learning new technologies, and
+        continuously improving my craft.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Projects Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "HR-Payroll-System",
+        timeframe: "May 18 - Jun 27, 2026",
+        role: "Backend Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Built an HR & Payroll Management System with strong OOP principles, handling employee data, salary calculations, attendance tracking, and payroll processing.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Collaborated using GitHub and AI tools; assisted in UX/UI design and deployed on Render.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "NekMak Restaurant",
+        timeframe: "May 01, 2026",
+        role: "Full-stack Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed a premium dining website with a dark aesthetic, featuring an interactive food ordering system and table reservation module.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Integrated Firebase for real-time data management and built a fully responsive frontend using Vanilla JavaScript, HTML5, and Tailwind CSS.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Service Rental Vehicles - VC1 Project",
+        timeframe: "Feb 15 - Apr 02, 2026",
+        role: "Developer",
+        achievements: [
+          <>
+            Developed a web platform for vehicle rental (motorbikes, bicycles, cars) enabling users to search nearby shops and book instantly.
+          </>,
+          <>
+            Contributed to frontend (Vue.js), backend (Laravel), and MySQL database integration; deployed on AWS.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Music Player",
+        timeframe: "Dec 22, 2025 - Jan 04, 2026",
+        role: "Front-End Developer",
+        achievements: [
+          <>
+            Developed a responsive music web app with user authentication, role-based access, play/pause controls, song upload, and real-time search.
+          </>,
+          <>
+            Built frontend using JavaScript integrated with Firebase and LocalStorage; deployed on Vercel.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Online Shopping (E-commerce)",
+        timeframe: "Sep 02 - Oct 09, 2025",
+        role: "Frontend Developer",
+        achievements: [
+          <>
+            Developed an e-commerce platform where users can browse categories and view products.
+          </>,
+          <>
+            Contributed to frontend with HTML, CSS, and JavaScript; used GitHub, Figma, and Vercel for version control, design, and deployment.
           </>,
         ],
         images: [],
@@ -157,78 +189,133 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Passerelles Numériques Cambodia (PNC)",
+        description: (
+          <>
+            2025 - Present: Pursuing Associate Degree in Web Development.<br />
+            Relevant courses: HTML, CSS, JavaScript, Backend Development, Databases, UI/UX Design.
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "High School",
+        description: (
+          <>
+            2021 - 2024: High School Graduate.
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Skills & Tools",
     skills: [
       {
-        title: "Figma",
+        title: "Programming Languages",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Languages I use for building software and web applications.</>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "PHP", icon: "php" },
+          { name: "Python", icon: "python" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Frontend Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building responsive and interactive user interfaces.</>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "HTML", icon: "html" },
+          { name: "CSS", icon: "css" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Backend & Frameworks",
+        description: (
+          <>Server-side development and application frameworks.</>
+        ),
+        tags: [
+          { name: "Node.js", icon: "nodejs" },
+          { name: "Laravel", icon: "laravel" },
         ],
+        images: [],
+      },
+      {
+        title: "Database",
+        description: (
+          <>Database management and data storage solutions.</>
+        ),
+        tags: [
+          { name: "MySQL", icon: "mysql" },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "RDBMS", icon: "database" },
+        ],
+        images: [],
+      },
+      {
+        title: "Development, DevOps & CMS",
+        description: (
+          <>Tools for version control, deployment, and content management.</>
+        ),
+        tags: [
+          { name: "GitHub", icon: "github" },
+          { name: "Docker", icon: "docker" },
+          { name: "Postman", icon: "postman" },
+          { name: "WordPress", icon: "wordpress" },
+        ],
+        images: [],
+      },
+      {
+        title: "Data Analysis",
+        description: (
+          <>Data visualization and business intelligence tools.</>
+        ),
+        tags: [
+          { name: "Power BI", icon: "powerbi" },
+        ],
+        images: [],
+      },
+      {
+        title: "Design & Collaboration",
+        description: (
+          <>Tools for design, project management, and collaboration.</>
+        ),
+        tags: [
+          { name: "Jira", icon: "jira" },
+          { name: "Figma", icon: "figma" },
+          { name: "Canva", icon: "canva" },
+          { name: "Draw.io", icon: "drawio" },
+        ],
+        images: [],
+      },
+      {
+        title: "Soft Skills",
+        description: (
+          <>Personal attributes that enable effective collaboration and problem-solving.</>
+        ),
+        tags: [
+          { name: "Leadership", icon: "leadership" },
+          { name: "Teamwork", icon: "teamwork" },
+          { name: "Critical Thinking", icon: "criticalThinking" },
+          { name: "Time Management", icon: "timeManagement" },
+          { name: "Project Management", icon: "projectManagement" },
+          { name: "Effective Communication", icon: "communication" },
+          { name: "Adaptability", icon: "adaptability" },
+          { name: "Self Motivation", icon: "selfMotivation" },
+          { name: "Responsibility", icon: "responsibility" },
+          { name: "Respect", icon: "respect" },
+        ],
+        images: [],
       },
     ],
   },
@@ -236,9 +323,9 @@ const about: About = {
 
 const blog: Blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: "Projects",
+  title: "Projects – case studies & write-ups",
+  description: `Project case studies and write-ups by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -254,9 +341,9 @@ const work: Work = {
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  label: "Events",
+  title: `Events – ${person.name}`,
+  description: `Events and activities by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
