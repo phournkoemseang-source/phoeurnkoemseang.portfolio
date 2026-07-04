@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Projects, Social, Work } from "@/types";
+import { About, Blog, Home, Newsletter, Person, Projects, Social } from "@/types";
 import { Line, Row, Text, Button } from "@once-ui-system/core";
 
 const person: Person = {
@@ -340,59 +340,4 @@ const blog: Blog = {
   description: `Blog posts and write-ups by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
-};
-
-
-
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Events",
-  title: `Events – ${person.name}`,
-  description: `Events and activities by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, projects, blog, gallery };
+};export { person, social, newsletter, home, about, projects, blog };
