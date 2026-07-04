@@ -111,7 +111,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   padding: 10px 24px;
   border: none;
   border-radius: 8px;
@@ -121,10 +121,26 @@
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.2s;
+  margin-right: 12px;
 }
 
-.printButton:hover {
+.printButton:hover:not(:disabled) {
   opacity: 0.85;
+}
+
+.printButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.printButtonSecondary {
+  background: transparent;
+  color: var(--neutral-on-background-strong);
+  border: 1px solid var(--neutral-alpha-medium);
+}
+
+.cvContent {
+  width: 100%;
 }
 
 @media print {

@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Gallery, Home, Newsletter, Person, Projects, Social, Work } from "@/types";
 import { Line, Row, Text, Button } from "@once-ui-system/core";
 
 const person: Person = {
@@ -8,7 +8,10 @@ const person: Person = {
   role: "Web Developer & IT Student",
   avatar: "/images/me.jpg",
   email: "phournkoemseang@gmail.com",
+  phone: "+855 312 326 668",
+  portfolio: "https://phournkoemseang-source.github.io/magic-portfolio",
   location: "Asia/Phnom_Penh",
+  locationLabel: "Phnom Penh, Cambodia",
   languages: ["Khmer", "English"],
   locale: "en",
 };
@@ -321,23 +324,25 @@ const about: About = {
   },
 };
 
+const projects: Projects = {
+  path: "/projects",
+  label: "Projects",
+  title: `Projects – ${person.name}`,
+  description: `Project case studies and write-ups by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/projects/posts
+  // All projects will be listed on the /projects route
+};
+
 const blog: Blog = {
   path: "/blog",
-  label: "Projects",
-  title: "Projects – case studies & write-ups",
-  description: `Project case studies and write-ups by ${person.name}`,
+  label: "Blog",
+  title: "Blog – case studies & write-ups",
+  description: `Blog posts and write-ups by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
-const work: Work = {
-  path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
-};
+
 
 const gallery: Gallery = {
   path: "/gallery",
@@ -390,4 +395,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, projects, blog, gallery };

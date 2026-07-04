@@ -22,6 +22,7 @@ import {
   HiOutlineShieldCheck,
   HiOutlineHandThumbUp,
   HiOutlineStar,
+  HiOutlineDevicePhoneMobile,
 } from "react-icons/hi2";
 
 import {
@@ -62,6 +63,7 @@ export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
   arrowRight: HiArrowRight,
   email: HiEnvelope,
+  phone: HiOutlineDevicePhoneMobile,
   globe: HiOutlineGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,
@@ -80,6 +82,7 @@ export const iconLibrary: Record<string, IconType> = {
   threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
+  star: HiOutlineStar,
   rocket: HiOutlineRocketLaunch,
   javascript: SiJavascript,
   nextjs: SiNextdotjs,

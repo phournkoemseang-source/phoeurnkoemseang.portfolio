@@ -19,9 +19,11 @@ const baseURL: string = "https://phournkoemseang-source.github.io/magic-portfoli
 const routes: RoutesConfig = {
   "/": true,
   "/about": true,
-  "/work": true,
+  "/projects": true,
+  "/work": false,
   "/blog": true,
-  "/gallery": true,
+  "/gallery": false,
+  "/contact": true,
 };
 
 const display: DisplayConfig = {

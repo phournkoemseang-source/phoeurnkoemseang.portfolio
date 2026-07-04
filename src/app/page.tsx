@@ -1,7 +1,6 @@
 import { Schema, Meta, Column } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
 import { HomeContent } from "@/components/HomeContent";
-import { Projects } from "@/components/work/Projects";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -29,9 +28,7 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <HomeContent>
-        <Projects />
-      </HomeContent>
+      <HomeContent />
     </Column>
   );
 }

@@ -23,8 +23,14 @@ export type Person = {
   avatar: string;
   /** Email address */
   email: string;
+  /** Phone number (optional) */
+  phone?: string;
+  /** Portfolio URL (optional, falls back to baseURL) */
+  portfolio?: string;
   /** IANA time zone location */
   location: IANATimeZone;
+  /** Display location text (e.g., "Phnom Penh, Cambodia") */
+  locationLabel?: string;
   /** Languages spoken */
   languages?: string[];
   /**
@@ -222,6 +228,12 @@ export interface About extends BasePageConfig {
  * @description Configuration for the Blog page, including metadata and navigation label.
  */
 export interface Blog extends BasePageConfig {}
+
+/**
+ * Projects page configuration.
+ * @description Configuration for the Projects page, including metadata and navigation label.
+ */
+export interface Projects extends BasePageConfig {}
 
 /**
  * Work/projects page configuration.

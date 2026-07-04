@@ -18,18 +18,20 @@ export function MemberCard({ name, role, avatar, mentor }: MemberCardProps) {
     .slice(0, 2);
 
   return (
-    <div
-      className={`${styles.card} ${mentor ? styles.glowPulse : ""}`}
-      title={`${name} - ${role}`}
-    >
-      {avatar ? (
-        <img src={avatar} alt={name} className={styles.avatar} />
-      ) : (
-        <div className={styles.placeholder}>{initials}</div>
-      )}
-      <div className={styles.overlay}>
-        <span className={styles.name}>{name}</span>
-        <span className={styles.role}>{role}</span>
+    <div className={styles.wrapper} title={`${name} - ${role}`}>
+      {/* Name & Role label — appears above the avatar on hover */}
+      <div className={styles.label}>
+        <span className={styles.labelName}>{name}</span>
+        <span className={styles.labelRole}>{role}</span>
+      </div>
+
+      {/* Avatar */}
+      <div className={`${styles.avatarWrap} ${mentor ? styles.glowPulse : ""}`}>
+        {avatar ? (
+          <img src={avatar} alt={name} className={styles.avatar} />
+        ) : (
+          <div className={styles.placeholder}>{initials}</div>
+        )}
       </div>
     </div>
   );

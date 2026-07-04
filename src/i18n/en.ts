@@ -1,9 +1,9 @@
 const messages: Record<string, string> = {
   "nav.home": "Home",
   "nav.about": "About",
-  "nav.work": "Work",
-  "nav.blog": "Projects",
-  "nav.gallery": "Events",
+  "nav.projects": "Projects",
+  "nav.blog": "Blog",
+  "nav.contact": "Contact",
 
   "hero.badge": "IT Student at Passerelles Numériques Cambodia",
   "hero.headline": "Aspiring Full-Stack Web Developer",
@@ -40,8 +40,29 @@ const messages: Record<string, string> = {
 
   "projects.title": "Projects",
 
-  "contact.title": "Get In Touch",
-  "contact.desc": "I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!",
+  "contact.title": "Contact Me",
+  "contact.subtitle": "Let's Build Something Together",
+  "contact.desc": "I'm currently available for freelance work, internships, and full-time opportunities. Have a project or job opportunity? Feel free to send me a message.",
+  "contact.email": "Email",
+  "contact.phone": "Phone",
+  "contact.location": "Location",
+  "contact.linkedin": "LinkedIn",
+  "contact.github": "GitHub",
+  "contact.portfolio": "Portfolio",
+  "contact.formTitle": "Send Me a Message",
+  "contact.formName": "Full Name",
+  "contact.formEmail": "Email Address",
+  "contact.formSubject": "Subject",
+  "contact.formMessage": "Message",
+  "contact.formSend": "Send Message",
+  "contact.formSending": "Sending...",
+  "contact.formSuccess": "Message sent successfully! I'll get back to you soon.",
+  "contact.available": "Available for",
+  "contact.fulltime": "Full-Time Jobs",
+  "contact.freelance": "Freelance Projects",
+  "contact.internship": "Internship Opportunities",
+  "contact.collaboration": "Collaboration",
+  "contact.footer": "Thanks for visiting my portfolio. Looking forward to hearing from you!",
 };
 
 export default messages;

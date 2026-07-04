@@ -8,23 +8,29 @@ import {
   Column,
   Badge,
   Row,
-  Line,
   Tag,
-  IconButton,
-  Icon,
+  Avatar,
 } from "@once-ui-system/core";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { person, social } from "@/resources";
-import type { ReactNode } from "react";
+import { person } from "@/resources";
+import { ContactSection } from "@/components/ContactSection";
 
-export function HomeContent({ children }: { children?: ReactNode }) {
+export function HomeContent() {
   const { t } = useLanguage();
 
   return (
     <>
       {/* Hero Section */}
-      <Column fillWidth horizontal="center" gap="m" paddingBottom="40">
+      <Column fillWidth horizontal="center" paddingBottom="40">
         <Column maxWidth="s" horizontal="center" align="center">
+          {/* Avatar / Headshot */}
+          <RevealFx translateY="0" delay={0} fillWidth horizontal="center">
+            <Avatar
+              src={person.avatar}
+              size="xl"
+              style={{ marginBottom: "1rem" }}
+            />
+          </RevealFx>
           <RevealFx
             fillWidth
             horizontal="center"
@@ -59,11 +65,11 @@ export function HomeContent({ children }: { children?: ReactNode }) {
               {t("hero.subline")}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" gap="16" paddingLeft="12">
+          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
             <Row gap="12" wrap horizontal="center">
               <Button
                 data-border="rounded"
-                href="#projects"
+                href="/projects"
                 variant="primary"
                 size="m"
                 weight="default"
@@ -74,7 +80,7 @@ export function HomeContent({ children }: { children?: ReactNode }) {
               </Button>
               <Button
                 data-border="rounded"
-                href="#contact"
+                href="/contact"
                 variant="secondary"
                 size="m"
                 weight="default"
@@ -101,10 +107,7 @@ export function HomeContent({ children }: { children?: ReactNode }) {
       </Column>
 
       {/* About Me Section */}
-      <Column id="about" fillWidth gap="24" paddingBottom="40">
-        <Row fillWidth paddingRight="64">
-          <Line maxWidth={48} />
-        </Row>
+      <Column id="about" fillWidth paddingBottom="40">
         <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
           <Row flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -122,16 +125,10 @@ export function HomeContent({ children }: { children?: ReactNode }) {
             </Column>
           </Row>
         </Row>
-        <Row fillWidth paddingLeft="64" horizontal="end">
-          <Line maxWidth={48} />
-        </Row>
       </Column>
 
       {/* Education Section */}
-      <Column id="education" fillWidth gap="24" paddingBottom="40">
-        <Row fillWidth paddingRight="64">
-          <Line maxWidth={48} />
-        </Row>
+      <Column id="education" fillWidth paddingBottom="40">
         <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
           <Row flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -165,16 +162,10 @@ export function HomeContent({ children }: { children?: ReactNode }) {
             </Column>
           </Row>
         </Row>
-        <Row fillWidth paddingLeft="64" horizontal="end">
-          <Line maxWidth={48} />
-        </Row>
       </Column>
 
       {/* Skills & Tools Section */}
-      <Column id="skills" fillWidth gap="24" paddingBottom="40">
-        <Row fillWidth paddingRight="64">
-          <Line maxWidth={48} />
-        </Row>
+      <Column id="skills" fillWidth paddingBottom="40">
         <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
           <Row flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -247,16 +238,10 @@ export function HomeContent({ children }: { children?: ReactNode }) {
             </Column>
           </Row>
         </Row>
-        <Row fillWidth paddingLeft="64" horizontal="end">
-          <Line maxWidth={48} />
-        </Row>
       </Column>
 
       {/* Soft Skills Section */}
-      <Column id="soft-skills" fillWidth gap="24" paddingBottom="40">
-        <Row fillWidth paddingRight="64">
-          <Line maxWidth={48} />
-        </Row>
+      <Column id="soft-skills" fillWidth paddingBottom="40">
         <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
           <Row flex={1} paddingLeft="l" paddingTop="24">
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
@@ -283,73 +268,10 @@ export function HomeContent({ children }: { children?: ReactNode }) {
             </Column>
           </Row>
         </Row>
-        <Row fillWidth paddingLeft="64" horizontal="end">
-          <Line maxWidth={48} />
-        </Row>
       </Column>
 
-      {/* Projects Section */}
-      <Column id="projects" fillWidth gap="24" paddingBottom="40">
-        <Row fillWidth paddingRight="64">
-          <Line maxWidth={48} />
-        </Row>
-        <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-          <Row flex={1} paddingLeft="l" paddingTop="24">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              {t("projects.title")}
-            </Heading>
-          </Row>
-        </Row>
-        {children}
-        <Row fillWidth paddingLeft="64" horizontal="end">
-          <Line maxWidth={48} />
-        </Row>
-      </Column>
-
-      {/* Contact Section */}
-      <Column id="contact" fillWidth gap="24" paddingBottom="xl">
-        <Row fillWidth paddingRight="64">
-          <Line maxWidth={48} />
-        </Row>
-        <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-          <Row flex={1} paddingLeft="l" paddingTop="24">
-            <Heading as="h2" variant="display-strong-xs" wrap="balance">
-              {t("contact.title")}
-            </Heading>
-          </Row>
-          <Row flex={3} paddingX="20">
-            <Column gap="20" fillWidth>
-              <Text variant="body-default-l" onBackground="neutral-weak">
-                {t("contact.desc")}
-              </Text>
-              <Row gap="16" wrap>
-                {social.map(
-                  (item) =>
-                    item.link && (
-                      <IconButton
-                        key={item.name}
-                        href={item.link}
-                        icon={item.icon}
-                        tooltip={item.name}
-                        size="l"
-                        variant="secondary"
-                      />
-                    ),
-                )}
-              </Row>
-              <Row gap="12" vertical="center">
-                <Icon name="email" onBackground="brand-weak" />
-                <Text variant="body-default-m" onBackground="neutral-weak">
-                  {person.email}
-                </Text>
-              </Row>
-            </Column>
-          </Row>
-        </Row>
-        <Row fillWidth paddingLeft="64" horizontal="end">
-          <Line maxWidth={48} />
-        </Row>
-      </Column>
+      {/* Contact Section will appear in the home page below */}
+      <ContactSection />
     </>
   );
 }

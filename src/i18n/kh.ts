@@ -1,9 +1,9 @@
 const messages: Record<string, string> = {
   "nav.home": "ទំព័រដើម",
   "nav.about": "អំពីខ្ញុំ",
-  "nav.work": "គម្រោង",
-  "nav.blog": "គម្រោង",
-  "nav.gallery": "ព្រឹត្តិការណ៍",
+  "nav.projects": "គម្រោង",
+  "nav.blog": "ប្លក់",
+  "nav.contact": "ទំនាក់ទំនង",
 
   "hero.badge": "និស្សិត IT នៅ Passerelles Numériques Cambodia",
   "hero.headline": "អ្នកអភិវឌ្ឍន៍ Full-Stack ប្រាថ្នាចង់ក្លាយជា",
@@ -41,7 +41,28 @@ const messages: Record<string, string> = {
   "projects.title": "គម្រោង",
 
   "contact.title": "ទំនាក់ទំនង",
-  "contact.desc": "ខ្ញុំតែងតែបើកចំហរចំពោះឱកាសថ្មីៗ ការសហការ ឬការសន្ទនារាក់ទាក់។ សូមកុំស្ទាក់ស្ទើរក្នុងការទាក់ទងមក!",
+  "contact.subtitle": "តោះបង្កើតអ្វីដែលអស្ចារ្យជាមួយគ្នា",
+  "contact.desc": "បច្ចុប្បន្នខ្ញុំមានសម្រាប់ការងារឯករាជ្យ កម្មសិក្សា និងឱកាសការងារពេញម៉ោង។ មានគម្រោង ឬឱកាសការងារមែនទេ? សូមទាក់ទងមកខ្ញុំដោយសេរី។",
+  "contact.email": "អ៊ីមែល",
+  "contact.phone": "ទូរស័ព្ទ",
+  "contact.location": "ទីតាំង",
+  "contact.linkedin": "LinkedIn",
+  "contact.github": "GitHub",
+  "contact.portfolio": "គេហទំព័រ",
+  "contact.formTitle": "ផ្ញើសារមកខ្ញុំ",
+  "contact.formName": "ឈ្មោះពេញ",
+  "contact.formEmail": "អាសយដ្ឋានអ៊ីមែល",
+  "contact.formSubject": "ប្រធានបទ",
+  "contact.formMessage": "សារ",
+  "contact.formSend": "ផ្ញើសារ",
+  "contact.formSending": "កំពុងផ្ញើ...",
+  "contact.formSuccess": "សារត្រូវបានផ្ញើដោយជោគជ័យ! ខ្ញុំនឹងឆ្លើយតបទៅអ្នកវិញឆាប់ៗ។",
+  "contact.available": "មានសម្រាប់",
+  "contact.fulltime": "ការងារពេញម៉ោង",
+  "contact.freelance": "គម្រោងឯករាជ្យ",
+  "contact.internship": "កម្មសិក្សា",
+  "contact.collaboration": "កិច្ចសហការ",
+  "contact.footer": "សូមអរគុណដែលបានចូលមើលផតថលរបស់ខ្ញុំ។ សង្ឃឹមថានឹងបានឮពីអ្នកឆាប់ៗ!",
 };
 
 export default messages;
