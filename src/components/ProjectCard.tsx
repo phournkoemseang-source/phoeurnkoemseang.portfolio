@@ -1,7 +1,23 @@
 "use client";
 
+import { Icon } from "@once-ui-system/core";
 import { FiExternalLink, FiGithub, FiArrowRight } from "react-icons/fi";
 import styles from "./ProjectCard.module.scss";
+
+const techNameMap: Record<string, string> = {
+  vuejs: "Vue.js",
+  laravel: "Laravel",
+  php: "PHP",
+  mysql: "MySQL",
+  javascript: "JavaScript",
+  html: "HTML5",
+  css: "CSS3",
+  nodejs: "Node.js",
+  typescript: "TypeScript",
+  bootstrap: "Bootstrap",
+  react: "React",
+  firebase: "Firebase",
+};
 
 interface TeamMember {
   name: string;
@@ -22,6 +38,7 @@ interface ProjectCardProps {
   link?: string;
   github?: string;
   deploy?: string;
+  techs?: string[];
   /** 'work' style: text-focused with title, links, and team hover cards */
   /** 'project' style: image-first with screenshot, links, and members */
   variant?: "work" | "project";
@@ -62,6 +79,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
   github,
   deploy,
+  techs,
   variant = "project",
 }) => {
   if (variant === "work") {
@@ -130,6 +148,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className={styles.projectInfo}>
         <h3 className={styles.projectTitle}>{title}</h3>
         {description && <p className={styles.projectDesc}>{description}</p>}
+
+        {techs && techs.length > 0 && (
+          <div className={styles.techRow}>
+            {techs.map((tech, idx) => (
+              <span
+                key={idx}
+                className={styles.techIcon}
+                title={techNameMap[tech] || tech}
+              >
+                <Icon name={tech} size="s" />
+              </span>
+            ))}
+          </div>
+        )}
 
         <div className={styles.projectActions}>
           {github && (

@@ -35,6 +35,7 @@ export function Projects({ range, exclude }: ProjectsProps) {
           description={post.metadata.summary}
           content={post.content}
           team={post.metadata.team || []}
+          techs={post.metadata.techs}
           link={post.metadata.link || ""}
           github={post.metadata.github || ""}
           deploy={post.metadata.deploy || ""}

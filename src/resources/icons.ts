@@ -54,6 +54,9 @@ import {
   SiWordpress,
   SiJira,
   SiCanva,
+  SiVuedotjs,
+  SiFirebase,
+  SiBootstrap,
 } from "react-icons/si";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaChartBar, FaDiagramProject, FaDatabase, } from "react-icons/fa6";
@@ -109,6 +112,9 @@ export const iconLibrary: Record<string, IconType> = {
   wordpress: SiWordpress,
   jira: SiJira,
   canva: SiCanva,
+  vuejs: SiVuedotjs,
+  firebase: SiFirebase,
+  bootstrap: SiBootstrap,
   powerbi: FaChartBar,
   drawio: FaDiagramProject,
   database: FaDatabase,
