@@ -128,6 +128,9 @@ const about: About = {
             Built an HR & Payroll Management System with strong OOP principles, handling employee data, salary calculations, attendance tracking, and payroll processing.
           </>,
           <>
+            Used MySQL for database management and Postman for testing APIs and endpoints.
+          </>,
+          <>
             Collaborated using GitHub and AI tools; assisted in UX/UI design and deployed on Render.
           </>,
         ],
@@ -154,6 +157,9 @@ const about: About = {
         achievements: [
           <>
             Developed a web platform for vehicle rental (motorbikes, bicycles, cars) enabling users to search nearby shops and book instantly.
+          </>,
+          <>
+            Used Postman for testing API endpoints during development.
           </>,
           <>
             Contributed to frontend (Vue.js), backend (Laravel), and MySQL database integration; deployed on AWS.
@@ -199,7 +205,7 @@ const about: About = {
         name: "Passerelles Numériques Cambodia (PNC)",
         description: (
           <>
-            2025 - Present: Pursuing Associate Degree in Web Development.<br />
+            2025 - Present: Pursuing Associate Degree in Web Programming.<br />
             Relevant courses: HTML, CSS, JavaScript, Backend Development, Databases, UI/UX Design.
           </>
         ),

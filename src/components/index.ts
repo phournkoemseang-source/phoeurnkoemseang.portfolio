@@ -10,3 +10,5 @@ export { CustomMDX } from "@/components/mdx";
 export { LanguageToggle } from "@/components/LanguageToggle";
 export { Projects } from "@/components/projects/Projects";
 export { ContactSection } from "@/components/ContactSection";
+export { LocaleContent } from "@/components/LocaleContent";
+export { T } from "@/components/T";

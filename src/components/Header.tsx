@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
 import { routes, display, person, about, projects, blog } from "@/resources";
+import { useLanguage } from "@/i18n/LanguageContext";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 import styles from "./Header.module.scss";
@@ -45,6 +46,7 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const { t } = useLanguage();
 
   return (
     <>
@@ -155,7 +157,7 @@ export const Header = () => {
                     <ToggleButton
                       prefixIcon="email"
                       href="/contact"
-                      label="Contact"
+                      label={t("nav.contact")}
                       selected={pathname === "/contact"}
                     />
                   </Row>

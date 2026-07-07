@@ -18,6 +18,7 @@ import {
 import { baseURL, about, person, projects } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
+import { T } from "@/components/T";
 import { TeamDisplay } from "@/components/TeamDisplay";
 import { Metadata } from "next";
 import { Projects } from "@/components/projects/Projects";
@@ -95,7 +96,7 @@ export default async function Project({
       />
       <Column maxWidth="s" gap="16" horizontal="center" align="center">
         <SmartLink href="/projects">
-          <Text variant="label-strong-m">Projects</Text>
+          <Text variant="label-strong-m"><T k="project.pageLabel" /></Text>
         </SmartLink>
         <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
           {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
@@ -107,7 +108,7 @@ export default async function Project({
               style={{ margin: "0", width: "fit-content" }}
               href={post.metadata.github}
             >
-              <Text variant="body-default-s">GitHub</Text>
+              <Text variant="body-default-s"><T k="project.github" /></Text>
             </SmartLink>
           )}
           {post.metadata.deploy && (
@@ -116,7 +117,7 @@ export default async function Project({
               style={{ margin: "0", width: "fit-content" }}
               href={post.metadata.deploy}
             >
-              <Text variant="body-default-s">Live Demo</Text>
+              <Text variant="body-default-s"><T k="project.liveDemo" /></Text>
             </SmartLink>
           )}
         </Flex>
@@ -149,7 +150,7 @@ export default async function Project({
       <Column fillWidth gap="40" horizontal="center" marginTop="40">
         <Line maxWidth="40" />
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
-          Related projects
+          <T k="project.related" />
         </Heading>
         <Projects exclude={[post.slug]} range={[2]} />
       </Column>

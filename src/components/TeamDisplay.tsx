@@ -2,6 +2,7 @@
 
 import { Column, Heading, Text } from "@once-ui-system/core";
 import { MemberCard } from "./MemberCard";
+import { useLanguage } from "@/i18n/LanguageContext";
 import styles from "./TeamDisplay.module.scss";
 
 interface TeamMember {
@@ -17,6 +18,7 @@ interface TeamDisplayProps {
 }
 
 export function TeamDisplay({ team }: TeamDisplayProps) {
+  const { t } = useLanguage();
   const mentor = team.find((m) => m.mentor);
   const members = mentor ? team.filter((m) => !m.mentor) : team;
 
@@ -25,14 +27,14 @@ export function TeamDisplay({ team }: TeamDisplayProps) {
   return (
     <Column className={styles.section} fillWidth horizontal="center">
       <Heading className={styles.title} as="h2" variant="heading-strong-l">
-        Team
+        {t("team.title")}
       </Heading>
 
       {mentor ? (
         <div className={styles.hasMentor}>
           <div className={styles.mentorColumn}>
             <Text className={styles.mentorLabel} variant="label-default-s">
-              Mentor
+              {t("team.mentor")}
             </Text>
             <MemberCard
               name={mentor.name}
@@ -44,7 +46,7 @@ export function TeamDisplay({ team }: TeamDisplayProps) {
 
           <div className={styles.membersColumn}>
             <Text className={styles.mentorLabel} variant="label-default-s">
-              Members
+              {t("team.members")}
             </Text>
             <div className={styles.membersGrid}>
               {members.map((member) => (

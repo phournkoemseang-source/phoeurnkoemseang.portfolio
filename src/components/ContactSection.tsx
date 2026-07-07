@@ -46,7 +46,7 @@ export function ContactSection() {
         {/* Left Column: Contact Info */}
         <Column flex={1} gap="24" paddingX="l" paddingTop="8">
           <Heading as="h3" variant="heading-strong-m">
-            Contact Information
+            {t("contact.contactInfo")}
           </Heading>
           <Column gap="16">
             <Row gap="12" vertical="center">
@@ -198,7 +198,7 @@ function ContactFormInner() {
     setError("");
 
     if (!formData.name || !formData.email || !formData.message) {
-      setError("Please fill in all required fields.");
+      setError(t("contact.formError"));
       setSending(false);
       return;
     }
@@ -209,7 +209,7 @@ function ContactFormInner() {
       setSent(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError(t("contact.formErrorGeneric"));
     } finally {
       setSending(false);
     }
@@ -228,12 +228,12 @@ function ContactFormInner() {
         gap="16"
       >
         <Icon name="star" size="xl" onBackground="brand-strong" />
-        <Heading as="h3" variant="heading-strong-l">Thank You!</Heading>
+        <Heading as="h3" variant="heading-strong-l">{t("contact.thankYou")}</Heading>
         <Text variant="body-default-l" onBackground="neutral-weak" align="center">
           {t("contact.formSuccess")}
         </Text>
         <Button variant="secondary" size="m" onClick={() => setSent(false)}>
-          Send Another Message
+          {t("contact.sendAnother")}
         </Button>
       </Column>
     );

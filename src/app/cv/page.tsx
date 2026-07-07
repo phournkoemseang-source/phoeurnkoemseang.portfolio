@@ -2,11 +2,13 @@
 
 import { useRef, useState } from "react";
 import { person } from "@/resources";
+import { useLanguage } from "@/i18n/LanguageContext";
 import styles from "./cv.module.scss";
 
 export default function CVPage() {
   const cvRef = useRef<HTMLDivElement>(null);
   const [downloading, setDownloading] = useState(false);
+  const { t } = useLanguage();
 
   const downloadPDF = async () => {
     if (!cvRef.current) return;
@@ -33,7 +35,6 @@ export default function CVPage() {
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
 
-      // If content is taller than one page, add multiple pages
       const imgHeight = (canvas.height * pageWidth) / canvas.width;
       let heightLeft = imgHeight;
       let position = 0;
@@ -51,7 +52,6 @@ export default function CVPage() {
       pdf.save(`${person.name.replace(/\s+/g, "_")}_CV.pdf`);
     } catch (err) {
       console.error("Failed to generate PDF:", err);
-      // Fallback to print
       window.print();
     } finally {
       setDownloading(false);
@@ -65,13 +65,13 @@ export default function CVPage() {
         onClick={downloadPDF}
         disabled={downloading}
       >
-        {downloading ? "⏳ Generating..." : "📄 Download PDF"}
+        {downloading ? t("cv.generating") : t("cv.downloadPdf")}
       </button>
       <button
         className={`${styles.printButton} ${styles.printButtonSecondary}`}
         onClick={() => window.print()}
       >
-        🖨️ Print / Save as PDF
+        🖨️ {t("cv.printPdf")}
       </button>
 
       <div ref={cvRef} className={styles.cvContent}>
@@ -88,23 +88,21 @@ export default function CVPage() {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>About</h2>
+          <h2 className={styles.sectionTitle}>{t("cv.about")}</h2>
           <p className={styles.itemDesc}>
-            Aspiring Full-Stack Web Developer and IT student at Passerelles
-            Numériques Cambodia (PNC). Building clean, responsive, and
-            user-friendly web applications with modern technologies.
+            {t("cv.aboutDesc")}
           </p>
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>Education</h2>
+          <h2 className={styles.sectionTitle}>{t("cv.education")}</h2>
           <div className={styles.item}>
             <div className={styles.itemHeader}>
               <h3 className={styles.itemTitle}>Passerelles Numériques Cambodia (PNC)</h3>
               <span className={styles.itemSubtitle}>2025 - Present</span>
             </div>
             <p className={styles.itemDesc}>
-              Pursuing Associate Degree in Web Development. Relevant courses
+              Pursuing Associate Degree in Web Programming. Relevant courses
               include HTML, CSS, JavaScript, Backend Development, Databases, and
               UI/UX Design.
             </p>
@@ -119,7 +117,7 @@ export default function CVPage() {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>Skills</h2>
+          <h2 className={styles.sectionTitle}>{t("cv.skills")}</h2>
           <ul className={styles.skills}>
             <li className={styles.skill}>JavaScript</li>
             <li className={styles.skill}>TypeScript</li>
@@ -140,7 +138,7 @@ export default function CVPage() {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>Projects Experience</h2>
+          <h2 className={styles.sectionTitle}>{t("cv.projectsExperience")}</h2>
           <div className={styles.item}>
             <div className={styles.itemHeader}>
               <h3 className={styles.itemTitle}>HR-Payroll-System</h3>
@@ -149,7 +147,8 @@ export default function CVPage() {
             <p className={styles.itemDesc}>
               Built an HR & Payroll Management System with strong OOP principles,
               handling employee data, salary calculations, attendance tracking,
-              and payroll processing. Deployed on Render.
+              and payroll processing. Used MySQL for database and Postman for
+              testing APIs and endpoints. Deployed on Render.
             </p>
           </div>
           <div className={styles.item}>
@@ -159,6 +158,7 @@ export default function CVPage() {
             </div>
             <p className={styles.itemDesc}>
               Web platform for vehicle rental using Vue.js, Laravel, and MySQL.
+              Used Postman for testing API endpoints during development.
               Deployed on AWS.
             </p>
           </div>
@@ -187,7 +187,7 @@ export default function CVPage() {
         </div>
 
         <div className={styles.section}>
-          <h2 className={styles.sectionTitle}>Soft Skills</h2>
+          <h2 className={styles.sectionTitle}>{t("cv.softSkills")}</h2>
           <ul className={styles.skills}>
             <li className={styles.skill}>Leadership</li>
             <li className={styles.skill}>Teamwork</li>

@@ -2,8 +2,10 @@
 
 import { Column, Heading, Text, Button } from "@once-ui-system/core";
 import { useEffect, useRef } from "react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export default function NotFound() {
+  const { t } = useLanguage();
   const blobRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -47,22 +49,18 @@ export default function NotFound() {
         404
       </Text>
       <Heading marginBottom="l" variant="display-default-xs">
-        PAGE NOT FOUND
+        {t("notFound.subtitle")}
       </Heading>
       <Text
         onBackground="neutral-weak"
         wrap="balance"
         align="center"
-        style={{ maxWidth: 400 }}
+        style={{ maxWidth: 400, whiteSpace: "pre-line" }}
       >
-        Oopsie woopsie! 🙈 This page went for a walk and never came back...
-        <br />
-        Maybe it&apos;s grabbing bubble tea? 🧋
-        <br />
-        Try pressing the button below before our monster gets hangry! 😤
+        {t("notFound.desc")}
       </Text>
       <Button href="/" variant="primary" size="m" weight="default" arrowIcon>
-        Take me home
+        {t("notFound.button")}
       </Button>
 
       <style>{`

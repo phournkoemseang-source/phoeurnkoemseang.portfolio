@@ -1,7 +1,10 @@
 "use client";
 
+"use client";
+
 import { Icon } from "@once-ui-system/core";
 import { FiExternalLink, FiGithub, FiArrowRight } from "react-icons/fi";
+import { useLanguage } from "@/i18n/LanguageContext";
 import styles from "./ProjectCard.module.scss";
 
 const techNameMap: Record<string, string> = {
@@ -17,6 +20,7 @@ const techNameMap: Record<string, string> = {
   bootstrap: "Bootstrap",
   react: "React",
   firebase: "Firebase",
+  postman: "Postman",
 };
 
 interface TeamMember {
@@ -82,6 +86,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   techs,
   variant = "project",
 }) => {
+  const { t } = useLanguage();
+
   if (variant === "work") {
     return (
       <div className={styles.workCard}>
@@ -93,25 +99,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             {content?.trim() && (
               <a href={href} className={styles.workLink}>
                 <FiArrowRight size={14} />
-                Read case study
+                {t("project.readCaseStudy")}
               </a>
             )}
             {github && (
               <a href={github} target="_blank" rel="noopener noreferrer" className={styles.workLink}>
                 <FiGithub size={14} />
-                GitHub
+                {t("project.github")}
               </a>
             )}
             {deploy && (
               <a href={deploy} target="_blank" rel="noopener noreferrer" className={styles.workLink}>
                 <FiExternalLink size={14} />
-                Live Demo
+                {t("project.liveDemo")}
               </a>
             )}
             {link && (
               <a href={link} target="_blank" rel="noopener noreferrer" className={styles.workLink}>
                 <FiExternalLink size={14} />
-                View project
+                {t("project.viewProject")}
               </a>
             )}
           </div>
@@ -167,26 +173,26 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {github && (
             <a href={github} target="_blank" rel="noopener noreferrer" className={styles.actionBtn}>
               <FiGithub size={14} />
-              GitHub
+              {t("project.github")}
             </a>
           )}
           {deploy && (
             <a href={deploy} target="_blank" rel="noopener noreferrer" className={styles.actionBtn}>
               <FiExternalLink size={14} />
-              Live Demo
+              {t("project.liveDemo")}
             </a>
           )}
           {content?.trim() && (
             <a href={href} className={styles.actionBtn}>
               <FiArrowRight size={14} />
-              Details
+              {t("project.details")}
             </a>
           )}
         </div>
 
         {team && team.length > 0 && (
           <div className={styles.projectTeam}>
-            <span className={styles.teamLabel}>Contributors</span>
+            <span className={styles.teamLabel}>{t("project.contributors")}</span>
             <div className={styles.teamRow}>
               {team.map((member, idx) => (
                 <MemberHoverCard

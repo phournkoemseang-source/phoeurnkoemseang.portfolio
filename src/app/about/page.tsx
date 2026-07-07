@@ -14,6 +14,8 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import { LocaleContent } from "@/components/LocaleContent";
+import { T } from "@/components/T";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -25,6 +27,31 @@ export async function generateMetadata() {
     image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
     path: about.path,
   });
+}
+
+function getProjectKey(company: string): string {
+  const map: Record<string, string> = {
+    "HR-Payroll-System": "hrpayroll",
+    "NekMak Restaurant": "nekmak",
+    "Service Rental Vehicles - VC1 Project": "rental",
+    "Music Player": "music",
+    "Online Shopping (E-commerce)": "ecommerce",
+  };
+  return map[company] || company.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function getSkillKey(title: string): string | null {
+  const map: Record<string, string> = {
+    "Programming Languages": "aboutPage.skills.programming.desc",
+    "Frontend Development": "aboutPage.skills.frontend.desc",
+    "Backend & Frameworks": "aboutPage.skills.backend.desc",
+    Database: "aboutPage.skills.database.desc",
+    "Development, DevOps & CMS": "aboutPage.skills.devops.desc",
+    "Data Analysis": "aboutPage.skills.dataanalysis.desc",
+    "Design & Collaboration": "aboutPage.skills.design.desc",
+    "Soft Skills": "aboutPage.skills.softskills.desc",
+  };
+  return map[title] || null;
 }
 
 export default function About() {
@@ -133,7 +160,7 @@ export default function About() {
                 }}
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Row paddingX="8">Schedule a call</Row>
+                <Row paddingX="8"><T k="about.scheduleCall" /></Row>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -198,65 +225,74 @@ export default function About() {
 
           {about.intro.display && (
             <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+              <LocaleContent kh="aboutPage.intro.p1">
+                {about.intro.description}
+              </LocaleContent>
             </Column>
           )}
 
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+                <LocaleContent kh="aboutPage.work.title">{about.work.title}</LocaleContent>
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
+                {about.work.experiences.map((experience, index) => {
+                  const projectKey = getProjectKey(experience.company);
+                  return (
+                    <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
+                      <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
+                        <Text id={experience.company} variant="heading-strong-l">
+                          {experience.company}
+                        </Text>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {experience.timeframe}
+                        </Text>
+                      </Row>
+                      <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                        <LocaleContent kh={`aboutPage.project.${projectKey}.role`}>
+                          {experience.role}
+                        </LocaleContent>
                       </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Row>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map(
-                        (achievement: React.ReactNode, index: number) => (
-                          <Text
-                            as="li"
-                            variant="body-default-m"
-                            key={`${experience.company}-${index}`}
-                          >
-                            {achievement}
-                          </Text>
-                        ),
+                      <Column as="ul" gap="16">
+                        {experience.achievements.map(
+                          (achievement: React.ReactNode, idx: number) => (
+                            <Text
+                              as="li"
+                              variant="body-default-m"
+                              key={`${experience.company}-${idx}`}
+                            >
+                              <LocaleContent kh={`aboutPage.project.${projectKey}.desc${idx + 1}`}>
+                                {achievement}
+                              </LocaleContent>
+                            </Text>
+                          ),
+                        )}
+                      </Column>
+                      {experience.images && experience.images.length > 0 && (
+                        <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
+                          {experience.images.map((image, index) => (
+                            <Row
+                              key={index}
+                              border="neutral-medium"
+                              radius="m"
+                              minWidth={image.width}
+                              height={image.height}
+                            >
+                              <Media
+                                enlarge
+                                radius="m"
+                                sizes={image.width.toString()}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Row>
+                          ))}
+                        </Row>
                       )}
                     </Column>
-                    {experience.images && experience.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
+                  );
+                })}
               </Column>
             </>
           )}
@@ -264,19 +300,26 @@ export default function About() {
           {about.studies.display && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
-                {about.studies.title}
+                <LocaleContent kh="aboutPage.education.title">{about.studies.title}</LocaleContent>
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
-                ))}
+                {about.studies.institutions.map((institution, index) => {
+                  const khKey = institution.name.includes("PNC")
+                    ? "aboutPage.education.pnc"
+                    : "aboutPage.education.highschool";
+                  return (
+                    <Column key={`${institution.name}-${index}`} fillWidth gap="4">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        <LocaleContent kh={khKey}>
+                          {institution.description}
+                        </LocaleContent>
+                      </Text>
+                    </Column>
+                  );
+                })}
               </Column>
             </>
           )}
@@ -289,49 +332,58 @@ export default function About() {
                 variant="display-strong-s"
                 marginBottom="40"
               >
-                {about.technical.title}
+                <LocaleContent kh="aboutPage.skills.title">{about.technical.title}</LocaleContent>
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">
-                      {skill.title}
-                    </Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.tags && skill.tags.length > 0 && (
-                      <Row wrap gap="8" paddingTop="8">
-                        {skill.tags.map((tag, tagIndex) => (
-                          <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
-                            {tag.name}
-                          </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
+                {about.technical.skills.map((skill, index) => {
+                  const khDescKey = getSkillKey(skill.title);
+                  return (
+                    <Column key={`${skill.title}-${index}`} fillWidth gap="4">
+                      <Text id={skill.title} variant="heading-strong-l">
+                        {skill.title}
+                      </Text>
+                      <Text variant="body-default-m" onBackground="neutral-weak">
+                        {khDescKey ? (
+                          <LocaleContent kh={khDescKey}>
+                            {skill.description}
+                          </LocaleContent>
+                        ) : (
+                          skill.description
+                        )}
+                      </Text>
+                      {skill.tags && skill.tags.length > 0 && (
+                        <Row wrap gap="8" paddingTop="8">
+                          {skill.tags.map((tag, tagIndex) => (
+                            <Tag key={`${skill.title}-${tagIndex}`} size="l" prefixIcon={tag.icon}>
+                              {tag.name}
+                            </Tag>
+                          ))}
+                        </Row>
+                      )}
+                      {skill.images && skill.images.length > 0 && (
+                        <Row fillWidth paddingTop="m" gap="12" wrap>
+                          {skill.images.map((image, index) => (
+                            <Row
+                              key={index}
+                              border="neutral-medium"
                               radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
-                        ))}
-                      </Row>
-                    )}
-                  </Column>
-                ))}
+                              minWidth={image.width}
+                              height={image.height}
+                            >
+                              <Media
+                                enlarge
+                                radius="m"
+                                sizes={image.width.toString()}
+                                alt={image.alt}
+                                src={image.src}
+                              />
+                            </Row>
+                          ))}
+                        </Row>
+                      )}
+                    </Column>
+                  );
+                })}
               </Column>
             </>
           )}
