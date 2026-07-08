@@ -120,6 +120,20 @@ const about: About = {
     title: "Projects Experience",
     experiences: [
       {
+        company: "LokPa Restaurant",
+        timeframe: "May 01, 2026",
+        role: "Full-stack Developer",
+        achievements: [
+          <>
+            Developed a premium dining website with a dark aesthetic using Vue, JavaScript, and TypeScript, featuring an interactive food ordering system.
+          </>,
+          <>
+            Integrated MySQL for database management and utilized Postman and Apidog for API endpoint testing; deployed on Vercel.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "HR-Payroll-System",
         timeframe: "May 18 - Jun 27, 2026",
         role: "Backend Developer",

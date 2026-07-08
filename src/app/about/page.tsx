@@ -32,6 +32,7 @@ export async function generateMetadata() {
 function getProjectKey(company: string): string {
   const map: Record<string, string> = {
     "HR-Payroll-System": "hrpayroll",
+    "LokPa Restaurant": "lokpa",
     "NekMak Restaurant": "nekmak",
     "Service Rental Vehicles - VC1 Project": "rental",
     "Music Player": "music",

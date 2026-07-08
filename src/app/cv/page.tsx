@@ -164,6 +164,16 @@ export default function CVPage() {
           </div>
           <div className={styles.item}>
             <div className={styles.itemHeader}>
+              <h3 className={styles.itemTitle}>LokPa Restaurant</h3>
+              <span className={styles.itemSubtitle}>Full-stack Developer</span>
+            </div>
+            <p className={styles.itemDesc}>
+              Premium dining website featuring an interactive food ordering system. Built with Vue,
+              JavaScript, TypeScript, MySQL, Postman, and Apidog; deployed on Vercel.
+            </p>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.itemHeader}>
               <h3 className={styles.itemTitle}>NekMak Restaurant</h3>
               <span className={styles.itemSubtitle}>Full-stack Developer</span>
             </div>
