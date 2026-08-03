@@ -1,0 +1,76 @@
+---
+title: "Kamrieng High School: A Real-World Next.js Project"
+publishedAt: "2026-07-15"
+summary: "A behind-the-scenes look at building the official bilingual website for Kamrieng High School in Battambang, Cambodia — a real production project powered by Next.js full-stack, TypeScript, Firebase, and Supabase."
+image: "/images/gallery/kamrieng-hight-school.jpg"
+---
+
+## Overview
+
+Not every project you build is a demo. Kamrieng High School (វិទ្យាល័យកំរៀង) is a **real production website** serving a public high school in Kamrieng district, Battambang province, Cambodia. Students, parents, and staff rely on it every day for school news, event announcements, student achievements, and admissions information — all in both Khmer and English.
+
+It's also one of my favorite projects because it puts every part of the web stack to work: a full-stack framework, two cloud databases, a real user base, and production deployment.
+
+## The Problem
+
+The school needed a modern online presence to replace scattered announcements and paper notices. The requirements were:
+
+- A **bilingual** interface (Khmer/English) — many students and parents prefer Khmer, while official communications are often shared in English.
+- A way to publish **school news and events** without needing a developer every time.
+- Sections for **student achievements** and **admissions documents**.
+- A **responsive design** that works on the phones most users actually have.
+
+## The Tech Stack
+
+I chose Next.js as the full-stack framework for both the frontend and the backend — API routes, server logic, and the UI all live in one codebase, which keeps the project simple to maintain.
+
+<Table
+  data={{
+    headers: [
+      { content: "Technology", key: "technology" },
+      { content: "Share", key: "share" },
+      { content: "Role", key: "role" },
+    ],
+    rows: [
+      ["TypeScript", "92.5%", "Core language, type safety"],
+      ["JavaScript", "4.1%", "Interactivity & glue code"],
+      ["PLpgSQL", "2.8%", "Database procedures on Supabase"],
+      ["CSS", "0.6%", "Styling"],
+    ],
+  }}
+/>
+
+### Databases
+
+The project uses **two databases**, each for what it's best at:
+
+- **Firebase** — handles real-time data and lightweight records, keeping client updates snappy.
+- **Supabase** — PostgreSQL under the hood, with **PLpgSQL** procedures powering the more structured queries and server-side logic.
+
+### Deployment
+
+Production hosting runs on **Vercel**, which pairs naturally with Next.js and makes every push to the repo deploy automatically.
+
+## Key Features
+
+- **Bilingual Khmer/English** interface with language switching
+- **School news & events** with public exam schedules and announcements
+- **Student achievements** showcase
+- **Admissions documents** and official school resources
+- Fully **responsive** design, optimized for mobile-first users
+- Real-time data management via **Firebase**
+
+## What I Learned
+
+1. **Bilingual apps are about more than translation.** You have to think about layout (Khmer text renders differently and can be much wider), font support, and which content should default to which language.
+2. **Full-stack in one framework pays off.** Keeping frontend and backend in Next.js removed an entire class of integration bugs — one build, one deploy, one mental model.
+3. **Two databases is a real architecture decision.** Using Firebase for real-time reads and Supabase/PostgreSQL for structured data with PLpgSQL procedures let each database do what it's strongest at, rather than forcing one tool to do everything.
+
+## Try It
+
+If you're curious, the site is live — you can explore the English version and switch to Khmer to see the bilingual experience in action.
+
+- **Live demo:** https://kamrieng-highschool.vercel.app/en
+- **Source code:** https://github.com/channyven/Kamreang_Hight_school_Website.git
+
+Building something real that a community actually uses is the best kind of practice. If you're a student developer, my advice is simple: find a local organization — a school, a shop, a small NGO — and offer to build their website. You'll learn more from that one real project than from ten tutorials.

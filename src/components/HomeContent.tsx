@@ -196,6 +196,7 @@ export function HomeContent() {
               <Column fillWidth gap="12">
                 <Text variant="heading-strong-m">{t("skills.backend")}</Text>
                 <Row gap="8" wrap>
+                  <Tag size="l" prefixIcon="nextjs">Next.js</Tag>
                   <Tag size="l" prefixIcon="nodejs">Node.js</Tag>
                   <Tag size="l" prefixIcon="laravel">Laravel</Tag>
                 </Row>
@@ -205,7 +206,9 @@ export function HomeContent() {
                 <Row gap="8" wrap>
                   <Tag size="l" prefixIcon="mysql">MySQL</Tag>
                   <Tag size="l" prefixIcon="mongodb">MongoDB</Tag>
-                  <Tag size="l" prefixIcon="database">RDBMS</Tag>
+                  <Tag size="l" prefixIcon="postgresql">PostgreSQL</Tag>
+                  <Tag size="l" prefixIcon="firebase">Firebase</Tag>
+                  <Tag size="l" prefixIcon="supabase">Supabase</Tag>
                 </Row>
               </Column>
               <Text variant="heading-strong-s" onBackground="brand-weak" paddingTop="16" paddingBottom="8">

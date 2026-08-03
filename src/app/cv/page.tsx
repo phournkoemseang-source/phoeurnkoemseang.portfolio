@@ -141,6 +141,18 @@ export default function CVPage() {
           <h2 className={styles.sectionTitle}>{t("cv.projectsExperience")}</h2>
           <div className={styles.item}>
             <div className={styles.itemHeader}>
+              <h3 className={styles.itemTitle}>Kamrieng High School</h3>
+              <span className={styles.itemSubtitle}>Full-stack Developer</span>
+            </div>
+            <p className={styles.itemDesc}>
+              Official bilingual (Khmer/English) website for Kamrieng High School
+              in Battambang, Cambodia, featuring school news, events, student
+              achievements, and admissions information. Built full-stack with
+              Next.js, TypeScript, Firebase, and Supabase; deployed on Vercel.
+            </p>
+          </div>
+          <div className={styles.item}>
+            <div className={styles.itemHeader}>
               <h3 className={styles.itemTitle}>HR-Payroll-System</h3>
               <span className={styles.itemSubtitle}>Backend Developer</span>
             </div>

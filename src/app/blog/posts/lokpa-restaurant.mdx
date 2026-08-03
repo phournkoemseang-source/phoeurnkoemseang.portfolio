@@ -1,0 +1,68 @@
+---
+title: "LokPa Restaurant: A Premium Dining Website Built with Vue"
+publishedAt: "2026-07-08"
+summary: "A deep dive into building LokPa Restaurant — a premium dining website with a dark aesthetic, interactive food ordering, table reservations, and a MySQL-backed API, deployed on Vercel."
+image: "/images/gallery/lokpa.jpg"
+---
+
+## Overview
+
+LokPa Restaurant is a premium dining website built to feel as luxurious as the restaurant itself. The dark aesthetic, smooth animations, and refined typography create a high-end experience — while underneath, a full ordering and reservation system keeps the business running.
+
+It's the kind of project where frontend polish and backend engineering have to work together: an interactive menu, a working cart, and reservations that actually reach the restaurant.
+
+## The Vision
+
+A restaurant website can't just look good — it has to convert visitors into customers. The goals were:
+
+- An **interactive food ordering system** that feels effortless
+- A **table reservation module** for dating and special events
+- A **premium dark aesthetic** with smooth animations
+- A backend that can **manage menu data and orders reliably**
+
+## The Tech Stack
+
+I chose Vue as the core UI framework, paired with TypeScript for type safety on top of JavaScript. MySQL handles the database, and Postman + Apidog were used to test every API endpoint.
+
+<Table
+  data={{
+    headers: [
+      { content: "Technology", key: "technology" },
+      { content: "Share", key: "share" },
+      { content: "Role", key: "role" },
+    ],
+    rows: [
+      ["Vue", "80.5%", "Core UI framework"],
+      ["JavaScript", "16.2%", "Interactivity"],
+      ["TypeScript", "2.9%", "Type safety"],
+      ["MySQL", "—", "Database management"],
+    ],
+  }}
+/>
+
+### Key Pieces
+
+- **Vue** — component-driven frontend that keeps the UI organized as the app grows
+- **MySQL** — relational storage for menus, orders, and reservations
+- **Postman & Apidog** — API testing throughout development, catching bugs before they ship
+
+## Key Features
+
+- Interactive **food ordering system**
+- **Table reservation module** for special events
+- Fully **responsive** frontend with modern styling and smooth animations
+- **MySQL** database management for menu and order data
+- Comprehensive **API endpoint testing** with Postman and Apidog
+
+## What I Learned
+
+1. **Aesthetic matters, but so does architecture.** The dark premium look is what users remember, but the component structure and API design are what make it maintainable.
+2. **TypeScript pays for itself.** Even at a small percentage of the codebase, it caught real bugs in the Vue components early.
+3. **Test your APIs before you build the UI.** Postman and Apidog let me validate every endpoint against MySQL before wiring up the interface — saving a lot of debugging later.
+
+## Try It
+
+The site is live, so you can browse the menu and experience the ordering flow yourself.
+
+- **Live demo:** https://lokpa-restaurant.vercel.app/
+- **Source code:** https://github.com/phournkoemseang-source/lokpa_restaurant.git

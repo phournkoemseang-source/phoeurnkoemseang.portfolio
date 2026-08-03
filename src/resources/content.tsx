@@ -7,6 +7,7 @@ const person: Person = {
   name: "PHOEURN Koemseang",
   role: "Web Developer & IT Student",
   avatar: "/images/me.jpg",
+  avatarAbout: "/images/seang.png",
   email: "phournkoemseang@gmail.com",
   phone: "+855 312 326 668",
   portfolio: "https://phournkoemseang-source.github.io/magic-portfolio",
@@ -119,6 +120,20 @@ const about: About = {
     display: true,
     title: "Projects Experience",
     experiences: [
+      {
+        company: "Kamrieng High School",
+        timeframe: "Jul 15, 2026",
+        role: "Full-stack Developer",
+        achievements: [
+          <>
+            Developed the official bilingual (Khmer/English) website for Kamrieng High School in Battambang, Cambodia, featuring school news, events, student achievements, and admissions information.
+          </>,
+          <>
+            Built full-stack with Next.js and TypeScript, integrating Firebase and Supabase (PLpgSQL) for data management; deployed on Vercel.
+          </>,
+        ],
+        images: [],
+      },
       {
         company: "LokPa Restaurant",
         timeframe: "May 01, 2026",
@@ -281,7 +296,7 @@ const about: About = {
         tags: [
           { name: "MySQL", icon: "mysql" },
           { name: "MongoDB", icon: "mongodb" },
-          { name: "RDBMS", icon: "database" },
+          { name: "RDBMS", icon: "postgresql" },
         ],
         images: [],
       },

@@ -79,7 +79,6 @@ const messages: Record<string, string> = {
   "mailchimp.invalidEmail": "Please enter a valid email address.",
 
   "blog.recentPosts": "Recent posts",
-  "blog.earlierProjects": "Earlier projects",
   "blog.label": "Blog",
 
   "shareSection.title": "Share this post:",
@@ -90,6 +89,31 @@ const messages: Record<string, string> = {
 
   "contact.metadataTitle": "Contact Me",
   "contact.metadataDesc": "Get in touch with PHOEURN Koemseang",
+
+  // Contact section (Home page & Contact page)
+  "contact.title": "Get In Touch",
+  "contact.subtitle": "Let's work together!",
+  "contact.desc": "Have a project in mind, a job opportunity, or just want to say hello? I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.",
+  "contact.email": "Email",
+  "contact.phone": "Phone",
+  "contact.location": "Location",
+  "contact.linkedin": "LinkedIn",
+  "contact.github": "GitHub",
+  "contact.portfolio": "Portfolio",
+  "contact.available": "Available For",
+  "contact.fulltime": "Full-time",
+  "contact.freelance": "Freelance",
+  "contact.internship": "Internship",
+  "contact.collaboration": "Collaboration",
+  "contact.footer": "Looking forward to hearing from you!",
+  "contact.formSuccess": "Your message has been sent successfully. I will get back to you soon.",
+  "contact.formTitle": "Send a Message",
+  "contact.formName": "Your Name",
+  "contact.formEmail": "Your Email",
+  "contact.formSubject": "Subject (optional)",
+  "contact.formMessage": "Your Message",
+  "contact.formSending": "Sending...",
+  "contact.formSend": "Send Message",
 
   // About page content (for Khmer fallback reference)
   "aboutPage.intro.p1": "I am PHOEURN Koemseang, a passionate Web Developer and IT student at Passerelles Numériques Cambodia (PNC). I chose web development because it allows me to combine creativity with technical problem-solving, building applications that make a real impact. My training at PNC has equipped me with strong foundations in front-end and back-end technologies, and I am committed to becoming a skilled full-stack developer. I enjoy collaborating on team projects, learning new technologies, and continuously improving my craft.",
@@ -110,6 +134,9 @@ const messages: Record<string, string> = {
   "aboutPage.project.hrpayroll.desc2": "Used MySQL for database management and Postman for testing APIs and endpoints.",
   "aboutPage.project.hrpayroll.desc3": "Collaborated using GitHub and AI tools; assisted in UX/UI design and deployed on Render.",
   "aboutPage.project.hrpayroll.role": "Backend Developer",
+  "aboutPage.project.kamrieng.desc1": "Developed the official bilingual (Khmer/English) website for Kamrieng High School in Battambang, Cambodia, featuring school news, events, student achievements, and admissions information.",
+  "aboutPage.project.kamrieng.desc2": "Built full-stack with Next.js and TypeScript, integrating Firebase and Supabase (PLpgSQL) for data management; deployed on Vercel.",
+  "aboutPage.project.kamrieng.role": "Full-stack Developer",
   "aboutPage.project.lokpa.desc1": "Developed a premium dining website with a dark aesthetic using Vue, JavaScript, and TypeScript, featuring an interactive food ordering system.",
   "aboutPage.project.lokpa.desc2": "Integrated MySQL for database management and utilized Postman and Apidog for API endpoint testing; deployed on Vercel.",
   "aboutPage.project.lokpa.role": "Full-stack Developer",

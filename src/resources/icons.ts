@@ -57,9 +57,10 @@ import {
   SiVuedotjs,
   SiFirebase,
   SiBootstrap,
+  SiPostgresql,
 } from "react-icons/si";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaChartBar, FaDiagramProject, FaDatabase, } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaInstagram, FaXTwitter, FaFacebook, FaPinterest, FaWhatsapp, FaReddit, FaTelegram, FaChartBar, FaDiagramProject } from "react-icons/fa6";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -107,6 +108,7 @@ export const iconLibrary: Record<string, IconType> = {
   laravel: SiLaravel,
   mysql: SiMysql,
   mongodb: SiMongodb,
+  postgresql: SiPostgresql,
   docker: SiDocker,
   postman: SiPostman,
   wordpress: SiWordpress,
@@ -117,7 +119,6 @@ export const iconLibrary: Record<string, IconType> = {
   bootstrap: SiBootstrap,
   powerbi: FaChartBar,
   drawio: FaDiagramProject,
-  database: FaDatabase,
   leadership: HiOutlineStar,
   teamwork: HiOutlineUserGroup,
   criticalThinking: HiOutlineLightBulb,

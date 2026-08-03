@@ -1,0 +1,70 @@
+---
+title: "Building an HR & Payroll Management System with OOP"
+publishedAt: "2026-06-27"
+summary: "A case study of the HR & Payroll Management System — a Node.js and TypeScript backend handling employee data, salary calculations, attendance tracking, and payroll processing with strong OOP principles."
+image: "/images/hr-payroll/hrpayroll-B97n2BXw.png"
+---
+
+## Overview
+
+An HR & Payroll Management System is one of those projects that looks simple on the surface and gets complicated fast. Employees, salaries, attendance, payroll runs — every piece depends on the others, and one wrong calculation ripples through the whole company.
+
+This project tackled all of it with a strong focus on **OOP (Object-Oriented Programming)** principles, keeping the growing system modular, testable, and maintainable.
+
+## The Problem
+
+HR systems deal in sensitive, precise data. The core requirements were:
+
+- Manage **employee records** reliably
+- Calculate **salaries** based on role, hours, and attendance
+- Track **attendance** day to day
+- Process **payroll** correctly and repeatably
+
+With a small team and a tight timeframe, we needed a structure that wouldn't collapse as features piled up — hence the emphasis on OOP.
+
+## The Tech Stack
+
+The backend runs on **Node.js** with **TypeScript** for type safety, and **MySQL** handles the database. **Postman** was used to test APIs and endpoints throughout development.
+
+<Table
+  data={{
+    headers: [
+      { content: "Technology", key: "technology" },
+      { content: "Role", key: "role" },
+    ],
+    rows: [
+      ["Node.js", "Runtime environment"],
+      ["TypeScript", "Type-safe JavaScript"],
+      ["MySQL", "Database"],
+      ["OOP", "Core architecture"],
+      ["HTML", "Structure"],
+      ["CSS", "Styling"],
+    ],
+  }}
+/>
+
+### Architecture Notes
+
+Designing the domain with OOP meant modeling real-world concepts directly: an `Employee` owns an attendance history, a `PayrollRun` aggregates salaries, and calculations live where they belong rather than scattered across route handlers. That separation made the trickiest parts — salary math and payroll processing — much easier to reason about and test.
+
+## Key Contributions
+
+- Built the HR & Payroll logic with strong **OOP** principles
+- **MySQL** database management for employee and payroll data
+- **Postman** for testing APIs and endpoints
+- Collaborated using **GitHub** and AI tools
+- Assisted in **UX/UI design**
+- Deployed the application on **Render**
+
+## What I Learned
+
+1. **OOP is about taming complexity.** When entities and their behaviors map cleanly to classes, features like payroll stop being scary.
+2. **Precision work needs type safety.** TypeScript caught many mistakes before they reached the database — a huge win for money-related logic.
+3. **Collaboration tools matter.** GitHub, AI tooling, and clear UX review helped a small team ship a big system.
+
+## Try It
+
+The system is deployed and accessible online if you'd like to see it in action.
+
+- **Live demo:** https://hr-payroll-system-erkg.onrender.com/
+- **Source code:** https://github.com/Panhakoeun/HR-Payroll-System.git

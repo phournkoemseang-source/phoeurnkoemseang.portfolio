@@ -8,14 +8,17 @@ interface PostProps {
   post: any;
   thumbnail: boolean;
   direction?: "row" | "column";
+  basePath?: string;
 }
 
-export default function Post({ post, thumbnail, direction }: PostProps) {
+export default function Post({ post, thumbnail, direction, basePath = "/blog" }: PostProps) {
+  const thumbnailSrc = post.metadata.image || post.metadata.images?.[0] || "";
+
   return (
     <Card
       fillWidth
       key={post.slug}
-      href={`/blog/${post.slug}`}
+      href={`${basePath}/${post.slug}`}
       transition="micro-medium"
       direction={direction}
       border="transparent"
@@ -25,14 +28,14 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
       gap={direction === "column" ? undefined : "24"}
       s={{ direction: "column" }}
     >
-      {post.metadata.image && thumbnail && (
+      {thumbnailSrc && thumbnail && (
         <Media
           priority
           sizes="(max-width: 768px) 100vw, 640px"
           border="neutral-alpha-weak"
           cursor="interactive"
           radius="l"
-          src={post.metadata.image}
+          src={thumbnailSrc}
           alt={"Thumbnail of " + post.metadata.title}
           aspectRatio="16 / 9"
         />

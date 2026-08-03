@@ -21,6 +21,8 @@ export type Person = {
   role: string;
   /** Path to avatar image */
   avatar: string;
+  /** Optional different avatar image for the About page */
+  avatarAbout?: string;
   /** Email address */
   email: string;
   /** Phone number (optional) */

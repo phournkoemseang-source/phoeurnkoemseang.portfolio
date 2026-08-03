@@ -1,0 +1,64 @@
+---
+title: "Music Player App: A Responsive Music Experience"
+publishedAt: "2025-12-22"
+summary: "A case study of the Music Player App — a responsive web app with user authentication, role-based access, play/pause controls, song uploads, and real-time search, powered by Firebase."
+image: "/images/music/music-project-CjpHyoMC.png"
+---
+
+## Overview
+
+Music apps are deceptively hard to build. The UI has to feel instant — play, pause, skip, search — while the data layer quietly handles authentication, uploads, and per-user roles.
+
+The Music Player App takes all of that on: a responsive player with **role-based access**, **song uploads**, and a **real-time search** that suggests songs as you type.
+
+## The Problem
+
+A music app needs to be both delightful and secure:
+
+- **Play, pause, and skip** without jank
+- **Upload songs** as a user with the right role
+- **Search in real time** while typing
+- **Authenticate users** and enforce roles
+- Work smoothly on **mobile and desktop**
+
+## The Tech Stack
+
+The frontend is built with **HTML**, **CSS**, and **JavaScript**, styled with **Bootstrap 5** and polished with **SweetAlert2** dialogs. **Firebase** powers authentication and data, with **LocalStorage** for lightweight client state.
+
+<Table
+  data={{
+    headers: [
+      { content: "Technology", key: "technology" },
+      { content: "Role", key: "role" },
+    ],
+    rows: [
+      ["HTML", "Structure"],
+      ["CSS", "Styling"],
+      ["Bootstrap 5", "UI framework"],
+      ["SweetAlert2", "Alert dialogs"],
+      ["JavaScript", "Frontend logic"],
+      ["Firebase", "Auth & real-time data"],
+    ],
+  }}
+/>
+
+## Key Features
+
+- **Play/pause and next/previous** controls
+- **Song upload** functionality
+- **Real-time search** that auto-suggests songs while typing
+- **User authentication** and **role-based access**
+- Smooth functionality with **Firebase** and **LocalStorage**
+
+## What I Learned
+
+1. **Perceived performance is everything.** Instant play/pause and live search results are what make a music app feel professional.
+2. **Auth and roles shape the UX.** Role-based access meant designing different experiences for listeners versus uploaders — and enforcing it on every path.
+3. **LocalStorage + Firebase is a pragmatic combo.** Using LocalStorage for fast client state and Firebase for shared data kept things simple without a heavy backend.
+
+## Try It
+
+The app is live — open it, search a song, and hit play.
+
+- **Live demo:** https://music-player-mauve-six.vercel.app/
+- **Source code:** https://github.com/Rathana-061/Music_Player.git

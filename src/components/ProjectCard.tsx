@@ -21,6 +21,9 @@ const techNameMap: Record<string, string> = {
   react: "React",
   firebase: "Firebase",
   postman: "Postman",
+  nextjs: "Next.js",
+  supabase: "Supabase",
+  postgresql: "PLpgSQL",
 };
 
 interface TeamMember {

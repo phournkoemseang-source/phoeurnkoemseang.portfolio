@@ -93,7 +93,6 @@ const messages: Record<string, string> = {
 
   // Blog
   "blog.recentPosts": "ប្រកាសថ្មីៗ",
-  "blog.earlierProjects": "គម្រោងមុនៗ",
   "blog.label": "ប្លក់",
 
   // Share Section
@@ -107,6 +106,31 @@ const messages: Record<string, string> = {
   // Contact page metadata
   "contact.metadataTitle": "ទំនាក់ទំនង",
   "contact.metadataDesc": "ទាក់ទង PHOEURN Koemseang - ភឿន គឹមសៀង",
+
+  // Contact section (Home page & Contact page)
+  "contact.title": "ទាក់ទងមកខ្ញុំ",
+  "contact.subtitle": "តោះធ្វើការជាមួយគ្នា!",
+  "contact.desc": "មានគម្រោងក្នុងគំនិត ឱកាសការងារ ឬក៏គ្រាន់តែចង់ស្វាគមន៍? ខ្ញុំរីករាយស្តាប់ពីអ្នក។ សូមបំពេញទម្រង់ខាងក្រោម ហើយខ្ញុំនឹងឆ្លើយតបមកវិញឱ្យបានលឿនបំផុត។",
+  "contact.email": "អ៊ីមែល",
+  "contact.phone": "ទូរស័ព្ទ",
+  "contact.location": "ទីតាំង",
+  "contact.linkedin": "LinkedIn",
+  "contact.github": "GitHub",
+  "contact.portfolio": "ផតថ្នាល",
+  "contact.available": "មុខតំណែងដែលអាចចូលរួម",
+  "contact.fulltime": "Full-time",
+  "contact.freelance": "Freelance",
+  "contact.internship": "Internship",
+  "contact.collaboration": "Collaboration",
+  "contact.footer": "រង់ចាំស្តាប់ពីអ្នកជានិច្ច!",
+  "contact.formSuccess": "សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ។ ខ្ញុំនឹងឆ្លើយតបមកវិញក្នុងពេលឆាប់ៗ។",
+  "contact.formTitle": "ផ្ញើសារ",
+  "contact.formName": "ឈ្មោះរបស់អ្នក",
+  "contact.formEmail": "អ៊ីមែលរបស់អ្នក",
+  "contact.formSubject": "ប្រធានបទ (មិនចាំបាច់)",
+  "contact.formMessage": "សាររបស់អ្នក",
+  "contact.formSending": "កំពុងផ្ញើសារ...",
+  "contact.formSend": "ផ្ញើសារ",
 
   // About page rich content (Khmer translated) (Khmer translated)
   "aboutPage.intro.p1": "ខ្ញុំឈ្មោះ PHOEURN Koemseang ជាអ្នកអភិវឌ្ឍន៍វេបដែលមានចំណង់ចំណូលចិត្ត និងជានិស្សិត IT នៅ Passerelles Numériques Cambodia (PNC)។ ខ្ញុំបានជ្រើសរើសផ្នែកអភិវឌ្ឍន៍វេប ពីព្រោះវាអនុញ្ញាតឱ្យខ្ញុំបញ្ចូលគ្នានូវភាពច្នៃប្រឌិត និងការដោះស្រាយបញ្ហាបច្ចេកទេស បង្កើតកម្មវិធីដែលមានឥទ្ធិពលពិតប្រាកដ។ ការបណ្ដុះបណ្ដាលរបស់ខ្ញុំនៅ PNC បានផ្ដល់ឱ្យខ្ញុំនូវមូលដ្ឋានគ្រឹះដ៏រឹងមាំក្នុងបច្ចេកវិទ្យា front-end និង back-end ហើយខ្ញុំប្ដេជ្ញាចិត្តក្លាយជាអ្នកអភិវឌ្ឍន៍ full-stack ដែលមានជំនាញ។ ខ្ញុំចូលចិត្តសហការលើគម្រោងជាក្រុម រៀនបច្ចេកវិទ្យាថ្មីៗ និងកែលម្អជំនាញរបស់ខ្ញុំជានិច្ច។",
@@ -129,6 +153,9 @@ const messages: Record<string, string> = {
   "aboutPage.project.hrpayroll.desc2": "ប្រើ MySQL សម្រាប់គ្រប់គ្រងមូលដ្ឋានទិន្នន័យ និង Postman សម្រាប់សាកល្បង APIs និង endpoints។",
   "aboutPage.project.hrpayroll.desc3": "សហការដោយប្រើ GitHub និងឧបករណ៍ AI ជួយក្នុងការរចនា UX/UI និងដាក់ពង្រាយនៅលើ Render។",
   "aboutPage.project.hrpayroll.role": "អ្នកអភិវឌ្ឍន៍ Backend",
+  "aboutPage.project.kamrieng.desc1": "បង្កើតគេហទំព័រផ្លូវការពីរភាសា (ខ្មែរ/អង់គ្លេស) សម្រាប់វិទ្យាល័យកំរៀង នៅខេត្តបាត់ដំបង ប្រទេសកម្ពុជា ដែលមានព័ត៌មានសាលារៀន ព្រឹត្តិការណ៍ សមិទ្ធផលសិស្ស និងឯកសារចូលរៀន។",
+  "aboutPage.project.kamrieng.desc2": "សាងសង់ full-stack ជាមួយ Next.js និង TypeScript ដោយភ្ជាប់ Firebase និង Supabase (PLpgSQL) សម្រាប់ការគ្រប់គ្រងទិន្នន័យ ហើយដាក់ពង្រាយនៅលើ Vercel។",
+  "aboutPage.project.kamrieng.role": "អ្នកអភិវឌ្ឍន៍ Full-stack",
   "aboutPage.project.lokpa.desc1": "បង្កើតគេហទំព័រភោជនីយដ្ឋានលំដាប់ខ្ពស់ជាមួយនឹងសោភ័ណភាពងងឹតដោយប្រើ Vue, JavaScript, និង TypeScript មានប្រព័ន្ធបញ្ជាទិញអាហារអន្តរកម្ម។",
   "aboutPage.project.lokpa.desc2": "ភ្ជាប់ MySQL សម្រាប់គ្រប់គ្រងទិន្នន័យ និងប្រើប្រាស់ Postman និង Apidog សម្រាប់សាកល្បង API endpoints ព្រមទាំងដាក់ពង្រាយនៅលើ Vercel។",
   "aboutPage.project.lokpa.role": "អ្នកអភិវឌ្ឍន៍ Full-stack",
